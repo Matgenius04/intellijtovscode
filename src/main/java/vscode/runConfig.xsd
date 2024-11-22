@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="component">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="configuration">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:choice maxOccurs="unbounded">
+                <xs:element minOccurs="0" maxOccurs="unbounded" name="option">
+                  <xs:complexType>
+                    <xs:attribute name="name" type="xs:string" use="optional" />
+                    <xs:attribute name="value" type="xs:string" use="optional" />
+                  </xs:complexType>
+                </xs:element>
+                <xs:element minOccurs="0" name="module">
+                  <xs:complexType>
+                    <xs:attribute name="name" type="xs:string" use="optional" />
+                  </xs:complexType>
+                </xs:element>
+                <xs:element minOccurs="0" name="method">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element minOccurs="0" name="option">
+                        <xs:complexType>
+                          <xs:attribute name="name" type="xs:string" use="optional" />
+                          <xs:attribute name="enabled" type="xs:boolean" use="optional" />
+                        </xs:complexType>
+                      </xs:element>
+                    </xs:sequence>
+                    <xs:attribute name="v" type="xs:unsignedByte" use="optional" />
+                  </xs:complexType>
+                </xs:element>
+              </xs:choice>
+            </xs:sequence>
+            <xs:attribute name="default" type="xs:boolean" use="optional" />
+            <xs:attribute name="name" type="xs:string" use="optional" />
+            <xs:attribute name="type" type="xs:string" use="optional" />
+            <xs:attribute name="factoryName" type="xs:string" use="optional" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="name" type="xs:string" use="optional" />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
